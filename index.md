@@ -31,5 +31,3 @@ I'm Kyle Liang, and this is my GitHub Blog :D I do USACO.
 
 ## Freeform Drawing
 <img src="images/Screenshot_20230817-145925.png" width = 200>
-
-Stuff
