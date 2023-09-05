@@ -74,12 +74,12 @@ HTML implementation of the calculator.
       <div class="calculator-number">.</div>
       <div class="calculator-operation">%</div>
       <div class="calculator-operation">/</div>
-      <!-- row 6-->
+      <!-- row 5-->
       <div class="calculator-operation">pow</div>
       <div class="calculator-operation">and</div>
       <div class="calculator-operation">or</div>
       <div class="calculator-operation">xor</div>
-      <!--row 5-->
+      <!--row 6-->
       <div class="calculator-clear">A/C</div>
       <div class="calculator-equals">=</div>
   </div>
@@ -174,7 +174,7 @@ function calculate (first, second) { // function to calculate the result of the 
         case "xor":
             result = first ^ second;
             break;
-        case "%"
+        case "%":
             result = first % second;
             break;
         default: 

@@ -1,11 +1,9 @@
 ---
-title: Classic Snake Game
+toc: true
+comments: false
 layout: post
-description: A pretty advanced use of JavaScript building classic snake game using menu controls, key events, snake simulation and timers.  
-permalink: /frontend/snake
-image: /images/snake.png
-categories: [C4.9]
-tags: [javascript]
+title: Snake Game
+description: A fun classic snake game. Use arrow keys to move the snake around!
 type: hacks
 courses: { compsci: {week: 2} }
 ---
@@ -122,6 +120,7 @@ courses: { compsci: {week: 2} }
         /* Attributes of Game */
         /////////////////////////////////////////////////////////////
         // Canvas & Context
+
         const canvas = document.getElementById("snake");
         const ctx = canvas.getContext("2d");
         // HTML Game IDs
@@ -151,6 +150,7 @@ courses: { compsci: {week: 2} }
         let food = {x: 0, y: 0};
         let score;
         let wall;
+        
         /* Display Control */
         /////////////////////////////////////////////////////////////
         // 0 for the game
@@ -211,6 +211,7 @@ courses: { compsci: {week: 2} }
                     }
                 });
             }
+        
             // activate window events
             window.addEventListener("keydown", function(evt) {
                 // spacebar detected
@@ -218,6 +219,7 @@ courses: { compsci: {week: 2} }
                     newGame();
             }, true);
         }
+        
         /* Snake is on the Go (Driver Function)  */
         /////////////////////////////////////////////////////////////
         let mainLoop = function(){
@@ -278,7 +280,7 @@ courses: { compsci: {week: 2} }
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                activeDot(snake[i].x, snake[i].y);
+                activeSnake(snake[i].x, snake[i].y);
             }
             // Paint food
             activeDot(food.x, food.y);
@@ -308,8 +310,17 @@ courses: { compsci: {week: 2} }
             }
             mainLoop();
         }
+
         /* Key Inputs and Actions */
         /////////////////////////////////////////////////////////////
+
+        // Prevent scrolling when arrow keys are pressed
+        window.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowLeft" || e.key === "ArrowRight") {
+            e.preventDefault();
+        }
+        });
+        
         let changeDir = function(key){
             // test key and switch direction
             switch(key) {
@@ -331,10 +342,15 @@ courses: { compsci: {week: 2} }
                     break;
             }
         }
+
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
         let activeDot = function(x, y){
-            ctx.fillStyle = "#FFFFFF";
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+        }
+        let activeSnake = function(x, y){
+            ctx.fillStyle = "#87CEEB";
             ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
         /* Random food placement */
@@ -370,7 +386,7 @@ courses: { compsci: {week: 2} }
         let setWall = function(wall_value){
             wall = wall_value;
             if(wall === 0){screen_snake.style.borderColor = "#606060";}
-            if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
+            if(wall === 1){screen_snake.style.borderColor = "#000000";}
         }
     })();
 </script>
