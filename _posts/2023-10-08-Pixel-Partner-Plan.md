@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Pixel Partner Plan
 description: Plan
-type: tangibles
+type: plans
 courses: { compsci: {week: 7} }
 comments: true
 ---
