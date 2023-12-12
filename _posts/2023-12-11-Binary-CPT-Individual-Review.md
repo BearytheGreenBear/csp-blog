@@ -3,7 +3,7 @@ toc: true
 comments: false
 layout: post
 title: CPT Binary Individual Review
-type: tanigbles
+type: tangibles
 courses: { compsci: {week: 15} }
 ---
 
