@@ -6,6 +6,10 @@ type: tangibles
 courses: { compsci: {week: 18} }
 ---
 
+### Team
+
+*As our team, our priority will be producing working code for a finished product. We will make small goals and try to tackle a project one step at a time. *
+
 >As a Team, make your own 3 to 5 lines Team manifesto. Share it in your next Team review for extra 'indicators'.
 
 ### Individual
