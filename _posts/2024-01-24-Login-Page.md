@@ -19,10 +19,9 @@ courses: { compsci: {week: 19} }
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import "/styles/variables";
     body {
       font-family: Helvetica, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #ff008c;
       margin: 0;
       padding: 0;
       display: flex;
@@ -31,7 +30,7 @@ courses: { compsci: {week: 19} }
       height: 100vh;
     }
     .login-container {
-      background-color: #fff;
+      background-color: #00fff7;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
