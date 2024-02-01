@@ -83,8 +83,8 @@ courses: { compsci: {week: 19} }
         myHeaders.append("Content-Type", "application/json");
         // Collect user input from the login form fields for email and password.
         var raw = JSON.stringify({
-            "email": document.getElementById("signInEmailInput").value,
-            "password": document.getElementById("signInPasswordInput").value
+            "uid": document.getElementById("uid").value,
+            "password": document.getElementById("password").value
             // Uncomment the following lines for quick testing with pre-defined credentials.
             //"email": "test@gmail.com",
             //"password": "123Lebron!"
