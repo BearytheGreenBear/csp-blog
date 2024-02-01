@@ -60,6 +60,8 @@ courses: { compsci: {week: 19} }
         <input id="password" class="input" placeholder="Password">
         <!-- The login button with an onclick attribute that calls the login_user() function -->
         <button class="signInButton" onclick="login_user()">Login</button>
+        <!-- The sign-up button with an onclick attribute that calls the sign_up_user() function -->
+        <button class="signUpButton" onclick="sign_up_user()">Sign Up</button>
     </div>
     <script>
         function userDbRequest() {
@@ -184,6 +186,39 @@ courses: { compsci: {week: 19} }
             // If there is a problem during the fetch or during processing, log the error.
             console.error('Error during login:', error);
         });
+    }
+    // Sign Up Code
+    function sign_up_user() {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        var raw = JSON.stringify({
+            "uid": document.getElementById("uid").value,
+            "password": document.getElementById("password").value
+            // You can add more fields for sign-up as needed
+        });
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            credentials: 'include',
+            body: raw,
+            redirect: 'follow'
+        };
+        fetch("http://localhost:8086/api/users/signup", requestOptions) // Change This
+            .then(response => {
+                if (!response.ok) {
+                    // Handle sign-up errors
+                    alert("Sign-up failed. Please try again.");
+                    return Promise.reject('Sign-up failed');
+                }
+                return response.text();
+            })
+            .then(result => {
+                // Handle successful sign-up
+                console.log(result);
+            })
+            .catch(error => {
+                console.error('Error during sign-up:', error);
+            });
     }
     </script>
     
