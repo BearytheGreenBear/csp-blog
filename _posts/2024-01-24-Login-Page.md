@@ -1,10 +1,54 @@
 ---
-toc: true
+toc: false
 comments: true
 title: Login Page
 type: hacks
 courses: { compsci: {week: 19} }
 ---
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Add your SCSS styles here */
+        .CONTAINER {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .CARD {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            text-align: center;
+        }
+        .input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .signInButton {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .signInButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
 
 <div class="CONTAINER">
     <!-- This is the card that holds the login fields and button -->
