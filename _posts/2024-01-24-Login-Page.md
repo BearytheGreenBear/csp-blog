@@ -19,7 +19,7 @@ courses: { compsci: {week: 19} }
             height: 100vh;
         }
         .CARD {
-            background-color: #f8f8f8;
+            background-color: #e6bff2;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -44,7 +44,7 @@ courses: { compsci: {week: 19} }
             font-size: 16px;
         }
         .signInButton:hover {
-            background-color: #0056b3;
+            background-color: #410b52;
         }
     </style>
 </head>
@@ -189,36 +189,46 @@ courses: { compsci: {week: 19} }
     }
     // Sign Up Code
     function sign_up_user() {
+        // STEP ONE: PREPARE THE REQUEST
+        // Create a Headers object to set the type of content we're sending, which is JSON.
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+        // Collect user input from the login form fields for email and password.
         var raw = JSON.stringify({
             "uid": document.getElementById("uid").value,
             "password": document.getElementById("password").value
-            // You can add more fields for sign-up as needed
+            // Uncomment the following lines for quick testing with pre-defined credentials.
+            //"email": "test@gmail.com",
+            //"password": "123Lebron!"
         });
+        // Print the collected data to the console for debugging purposes.
+        console.log(raw);
+        // Set up the options for the fetch request, including method, headers, and body.
         var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            credentials: 'include',
+            method: "POST",
+            headers: myHeaders, // Attach the headers, including our content type.
+            credentials: 'include', // Include credentials in case of cookies, etc.
             body: raw,
-            redirect: 'follow'
+            redirect: 'follow' // Follow any redirects automatically.
         };
-        fetch("http://localhost:8086/api/users/signup", requestOptions) // Change This
-            .then(response => {
-                if (!response.ok) {
-                    // Handle sign-up errors
-                    alert("Sign-up failed. Please try again.");
-                    return Promise.reject('Sign-up failed');
-                }
-                return response.text();
-            })
-            .then(result => {
-                // Handle successful sign-up
-                console.log(result);
-            })
-            .catch(error => {
-                console.error('Error during sign-up:', error);
-            });
+        // Collect user input
+        // Posting in backend only works if user input is sent as query parameters
+        fetch("http://localhost:8086/api/users/create", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(errorMsg => {
+                    alert('Error: ' + errorMsg);
+                });
+            }
+            // Success!!!
+            alert("Signup Complete");
+            // Redirect to Database location
+            location.reload();
+        })
+        .catch(error => {
+            alert('An unexpected error occurred: ' + error.message);
+        });
     }
-    </script>
+</script>
+
     
