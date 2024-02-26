@@ -26,7 +26,18 @@ Aashray | [Login Page Concept Design](https://saak-apcsp.github.io/SAAK_repo/ima
 
 # CPT
 
+CPT Requirement | Feature(s) That Map to CB Requirements
+-- | --
+Program Input | Our project allows the user to input their own messages/posts, and the ability to like, edit, and reply. Javascript buttons and text-inputs are used to achieve this purpose. (In addition, our login and sign-up features are other examples of program input).
+Use of list (or other collection type) to represent data | JSON is used to transfer data from backend (in python) to frontend (in javascript), keeping track of information like the message itself (a string), number of likes (an integer), and the user (a string). In the backend, an SQLite database is used to keep track of users and messages.
+One or more procedure contributing to program's purpose | Like, edit, and reply functions are all procedures supporting the program's purpose. Each function takes in the respective paramaters (e.g. number of likes for the like function and the new message for the edit function, along with other data like user id), fetches the backend to complete its purpose, and recieves confirmation from the backend (e.g. if there were any errors or not).
+Algorithm with sequencing, selection, and iteration | One notable example of iteration in the project is the function to display posts, where the procedure iterates through all posts in the database to display.
+Calls to student-developed procedure | Use of Javascript functions and fetches to backend API.
+Output based on input | Like, edit, and reply functions all have unique outputs based on user-input: updating like count, editing the message, or adding a reply to another message.
+
 # Pull Requests
+
+🔗[SASS Formatting](https://github.com/SAAK-APCSP/Bluejay-Frontend/pull/1)
 
 # Code Commits
 
@@ -66,7 +77,7 @@ Aashray | [Login Page Concept Design](https://saak-apcsp.github.io/SAAK_repo/ima
                 border-color: #00FF00; /* Green */
             }
         }
-        /* Styling Goes Here */
+        /* Other Styling Goes Here */
     </style>
 </head>
 <body onload="fetchPosts();">
@@ -86,7 +97,7 @@ Aashray | [Login Page Concept Design](https://saak-apcsp.github.io/SAAK_repo/ima
         </div>
     </div>
     <div id="latestPosts" class="latest-posts"></div>
-<script>
+    <script>
     function createPost() {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
