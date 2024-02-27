@@ -181,6 +181,7 @@ courses: { compsci: {week: 19} }
         .then(result => {
             // If the login is successful, print the result to the console.
             console.log(result);
+            window.location.href = "{{site.baseurl}}/2024/02/26/redirectedpage.html";
         })
         .catch(error => {
             // If there is a problem during the fetch or during processing, log the error.

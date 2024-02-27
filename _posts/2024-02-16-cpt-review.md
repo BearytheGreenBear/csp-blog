@@ -55,6 +55,8 @@ Output based on input | Like, edit, and reply functions all have unique outputs 
 
 🔗[Reply Feature (WIP)](https://github.com/SAAK-APCSP/Bluejay-Frontend/commit/66a0068d9124ac13c8191d899d50cb63c1e64ae8)
 
+🔗[Delete Feature](https://github.com/SAAK-APCSP/Bluejay-Frontend/commit/a92b16b9544f5fa010c50546c0ac40b1985dd830)
+
 `dashboard.md`
 ```markdown
 <html lang="en">
@@ -202,3 +204,5 @@ Output based on input | Like, edit, and reply functions all have unique outputs 
 ```
 
 # 1-Minute Video
+
+🔗[Video Link (Google Drive)](https://drive.google.com/file/d/1axGI-L8X8oCt5i0HckZ7R1jSKcPp2fR8/view?usp=sharing)
