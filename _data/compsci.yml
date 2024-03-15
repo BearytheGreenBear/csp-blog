@@ -28,4 +28,9 @@ Unit6:
   title: Unit 6
   description: Stuff
   start: 20
-  end: 23
+  end: 24
+Unit7:
+  title: Unit 7
+  description: Data Structures 1
+  start: 25
+  end: 29
